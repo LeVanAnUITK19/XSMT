@@ -2,8 +2,8 @@ import 'dart:math';
 import 'package:http/http.dart' as http;
 
 class Api {
-  static const baseUrl1 = 'https://xsmn.onrender.com/api/';
-  static const baseUrl2 = 'https://xsmn-5jbi.onrender.com/api/';
+  static const baseUrl1 = 'https://xsmt.onrender.com/api/';
+  static const baseUrl2 = 'https://xsmt.onrender.com/api/';
   static final List<String> _bases = [baseUrl1, baseUrl2];
   static final Random _random = Random();
 

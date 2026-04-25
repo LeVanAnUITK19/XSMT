@@ -134,7 +134,7 @@ const run = async () => {
     // 👉 lấy ngày hôm nay
     const date = new Date().toLocaleDateString("sv-SE");
 
-    const data = await crawlXSMN(date);
+    const data = await crawlXSMT(date);
 
     console.log("📊 Data:", JSON.stringify(data, null, 2));
 

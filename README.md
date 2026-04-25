@@ -1,6 +1,6 @@
-# 🎰 Lottery App - Xổ Số Miền Nam
+# 🎰 Lottery App - Xổ Số Miền Trung
 
-Ứng dụng tra cứu kết quả xổ số miền Nam theo thời gian thực, gồm 3 thành phần: **Backend API**, **Crawl Service** và **Frontend Flutter**.
+Ứng dụng tra cứu kết quả xổ số miền Trung theo thời gian thực, gồm 3 thành phần: **Backend API**, **Crawl Service** và **Frontend Flutter**.
 
 ---
 
@@ -54,8 +54,8 @@ REDIS_URL=rediss://...
 
 **Query params ví dụ:**
 ```
-GET /api/results/filter?region=mien-nam&date=2026-04-22
-GET /api/results/filter-province?province=TP.HCM&date=2026-04-22
+GET /api/results/filter?region=mien-trung&date=2026-04-22
+GET /api/results/filter-province?province=Da%20Nang&date=2026-04-22
 ```
 
 ### Cấu trúc dữ liệu
@@ -63,10 +63,10 @@ GET /api/results/filter-province?province=TP.HCM&date=2026-04-22
 ```json
 {
   "date": "2026-04-22T00:00:00.000Z",
-  "region": "mien-nam",
+  "region": "mien-trung",
   "provinces": [
     {
-      "province": "TP.HCM",
+      "province": "Đà Nẵng",
       "full": {
         "DB": ["123456"],
         "G1": ["12345"],
@@ -94,10 +94,10 @@ cd crawl
 npm install
 
 # Tạo mới kết quả ngày hôm nay (POST)
-node crawlXSMN_POST.js
+node crawlXSMT_POST.js
 
 # Cập nhật kết quả ngày hôm nay (PUT/upsert)
-node crawlXSMN_PUT.js
+node crawlXSMT_PUT.js
 ```
 
 > Thường được chạy tự động qua **GitHub Actions** theo lịch hàng ngày.
@@ -109,7 +109,7 @@ node crawlXSMN_PUT.js
 Ứng dụng Flutter hiển thị kết quả xổ số và tính năng **dò vé số tự động**.
 
 ### Tính năng
-- Xem kết quả xổ số miền Nam theo ngày
+- Xem kết quả xổ số miền Trung theo ngày
 - Lọc theo tỉnh thành
 - Dò vé số 6 chữ số — tự động kiểm tra tất cả các giải (G8 → ĐB, giải phụ, giải khuyến khích)
 
@@ -125,7 +125,7 @@ flutter run
 
 ## Triển khai
 
-- **Backend** deploy trên [Render](https://render.com) tại `https://xsmn.onrender.com`
+- **Backend** deploy trên [Render](https://render.com) tại `https://xsmt.onrender.com`
 - **Crawl** chạy qua GitHub Actions (`.github/workflows/`)
 - **Frontend** build Flutter web hoặc Android/iOS
 
@@ -136,4 +136,3 @@ flutter run
 - Cache Redis TTL: 2 phút cho endpoint `GET /api/results`
 - Khi PUT thành công, cache `results:all` bị xóa để đảm bảo dữ liệu mới nhất
 - Index MongoDB: `{ date, region }` unique
-# XSMT

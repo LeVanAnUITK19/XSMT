@@ -13,7 +13,7 @@ class MyDrawer extends StatelessWidget {
               padding: const EdgeInsets.all(4),
               child: Image.asset('assets/images/XSMN_image.png'),
             ),
-            title: const Text('Xổ Số Miền Nam'),
+            title: const Text('Xổ Số Miền Trung'),
             backgroundColor: Colors.white,
           ),
           const Center(child: Text('version 1.0.0')),
